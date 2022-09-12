@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chatbot prototype</title>
+  <script src="./tlogic.js"></script>
+  <style>
+    #chat {float: right; margin: 5vh 3vw; width: 360px; border: 2px solid blue; border-radius: 9px; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+    #msgs {min-height: 50vh; padding: 1vh;}
+    .bottext {background-color: lightgray; color: blue; margin: 1vh 3vh 1vh 0; padding: 1vh; border-radius: 9px;}
+    .usertext {text-align: right; background-color: lightcoral; margin: 1vh 0 1vh 3vh; padding: 1vh; border-radius: 9px; color: white;}
+    #input {padding: 1vh; margin: 0 auto; display: block;}
+    h3 {font-weight: lighter; color: ghostwhite; text-align: center; background-color: blue; margin: 0; padding: 1vh;}
+  </style>
+</head>
+<body>
+  <main>
+    <div id="chat">
+      <h3>Welcome!</h3>
+      <div id="msgs">
+      </div>
+      <input id="input" placeholder="Type here..." autocomplete="off"  autofocus="true"/>
+    </div>
+  </main>
+</body>
+</html>
