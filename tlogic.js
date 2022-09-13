@@ -20,16 +20,13 @@ const ans = [
 const alts = ["Go on...", "Try again",];
 
 function compare(qs, ans, q) {
-  let a
   for (let r = 0; r < qs.length; r++) {
     for (let c = 0; c < qs[r].length; c++) {
       if (qs[r][c] === q) {
-        a = ans[r][Math.floor(Math.random() * ans[r].length)];
-        return a
+        return ans[r][Math.floor(Math.random() * ans[r].length)];
       }
     }
   }
-  // return alts[1]
   return alts[Math.floor(Math.random() * alts.length)]
 }
 
