@@ -1,8 +1,6 @@
 import { useState} from "react";
 
 export default function Modal() {
-
-  const [chat, setChat] = useState([])
   // Sample user queries
   const qs = [ 
     ["how are you", "how is life", "how are things"],        //0
@@ -33,6 +31,8 @@ export default function Modal() {
     return alts[Math.floor(Math.random() * alts.length)]
   }
 
+  const [chat, setChat] = useState([[],])
+
   const handleEnter = (e) => {
     if (e.code === "Enter") {
       let input = e.target.value;
@@ -40,9 +40,14 @@ export default function Modal() {
       let txt = input.toLowerCase().replace(/[^\w\s\d]/gi, '');
       txt = txt.replace(/ a /g," ").replace(/please /g, '').replace(/ please/g, '');
       
-      res = compare(qs, ans, txt);
-      console.log(res)
+      let res = compare(qs, ans, txt);
+      let cur = [[input, 'Typing...'],];
+      setChat([...chat, ...cur]);
       
+      setTimeout(() => {
+        let cur = [[input, res],];
+        setChat([...chat, ...cur]);
+        },1000);
     }
   }
 
@@ -50,8 +55,16 @@ export default function Modal() {
     <div id="chat">
       <h3>Welcome!</h3>
       <div id="msgs">
+        {chat.map((pair,i) => 
+          <div key={i}>
+            <h3>{pair[0]}</h3>
+            <h4>{pair[1]}</h4>
+          </div>
+        )}
       </div>
-      <input id="input" onKeyDown={handleEnter} placeholder="Type here..." autocomplete="off"  autofocus="true"/>
+      <input id="input" onKeyDown={handleEnter} placeholder="Type here..." autoFocus />
     </div>
   );
 }
+
+// autoFocus={true} autocomplete="off"
