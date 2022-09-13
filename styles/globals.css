@@ -14,6 +14,46 @@ a {
   text-decoration: none;
 }
 
+#chat {
+  z-index: 1;
+  width: 360px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 40, 80, 0.65);
+  text-align: center;
+}
+#msgs {
+  background-color: rgba(0, 30, 90, 0.85);
+  border-radius: 9px;
+  min-height: 50vh;
+  max-height: 85vh;
+  padding: 2vh;
+  margin: 2vh;
+}
+#msgs h5 {
+  background-color: navy;
+  border-radius: 9px;
+  text-align: right;
+  font-weight:normal;
+  font-size: medium;
+  margin: 0 0 0 3vh;
+  padding: 2vh;
+}
+#msgs h6 {
+  text-align: left;
+  font-weight:normal;
+  font-size: medium;
+  margin: 2vh 3vh 2vh 0;
+}
+#input {
+  padding: 2vh;
+  border: none;
+  color: white;
+  border-radius: 9px;
+  background-color: navy;
+}
 
 @media (prefers-color-scheme: dark) {
   html {

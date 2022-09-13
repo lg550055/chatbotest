@@ -31,7 +31,7 @@ export default function Modal() {
     return alts[Math.floor(Math.random() * alts.length)]
   }
 
-  const [chat, setChat] = useState([[],])
+  const [chat, setChat] = useState([])
 
   const handleEnter = (e) => {
     if (e.code === "Enter") {
@@ -47,18 +47,18 @@ export default function Modal() {
       setTimeout(() => {
         let cur = [[input, res],];
         setChat([...chat, ...cur]);
-        },1000);
+        },1500);
     }
   }
 
   return (
     <div id="chat">
-      <h3>Welcome!</h3>
+      <h4>Hi, how can I help you?</h4>
       <div id="msgs">
         {chat.map((pair,i) => 
           <div key={i}>
-            <h3>{pair[0]}</h3>
-            <h4>{pair[1]}</h4>
+            <h5>{pair[0]}</h5>
+            <h6>{pair[1]}</h6>
           </div>
         )}
       </div>
